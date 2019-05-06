@@ -1,0 +1,107 @@
+input[type="text"] {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 20px;
+    margin: 1px;
+}
+
+input:invalid {
+    box-shadow: 0 0 1px 3px red;
+}
+input:focus:invalid {
+    
+}
+
+.guessPeg, .mysteryPeg {
+    margin: 1px;
+}
+
+#feedbackContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+#inputContainer, #secretCodeContainer, .guessContainer, .blackContainer, .whiteContainer, .turnFeedback {
+    display: flex;
+    flex-direction: row;
+}
+
+.dotContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mysteryPeg {
+    background-color: black;
+    color: white;
+}
+
+.spacer {
+    width: 20px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    border: black solid 1px;
+    border-radius: 50%;
+    margin: 1px;
+}
+
+.white {
+    background-color: white;
+}
+
+.black {
+    background-color: black;
+}
+
+.guessContainer > div, .mysteryPeg {
+    height: 40px;
+    width: 40px;
+}
+
+.guessPeg, .mysteryPeg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: 26px;
+    color: white;
+    border: 1px #999999 solid;
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+.guessPeg1 {
+    background-color: red;
+}
+
+.guessPeg2 {
+    background-color: orange;
+}
+
+.guessPeg3 {
+    background-color: yellow;
+}
+
+.guessPeg4 {
+    background-color: green;
+}
+
+.guessPeg5 {
+    background-color: blue;
+}
+
+.guessPeg6 {
+    background-color: indigo;
+}
+
+.guessPeg7 {
+    background-color: purple;
+}
