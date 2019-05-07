@@ -56,13 +56,20 @@ function validateGuess() {
 
     if (validSlots == secretCodeLength) {
         $('#submitGuess').removeAttr('disabled');
-        // $('input').keyup(function(event) {
-        //     if (event.keyCode == 13) {
-        //         handleSubmit();
-        //     }
-        // });
+        enableEnterSubmit(1);
     } else {
         $('#submitGuess').attr('disabled','disabled');
+        enableEnterSubmit(0);
+    }
+}
+
+function enableEnterSubmit(validity) {
+    if (validity == 1) {
+        if (event.keyCode == 13) {
+            handleSubmit();
+        }
+    } else {
+        $('.userInput').off();
     }
 }
 
