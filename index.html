@@ -13,12 +13,14 @@
     </head>
 <body>
     <h1>Mastermind</h1>
+    <p id="gameInstructions">Instructions</p>
     <select id="chooseSecretCodeLength"></select>
     <select id="chooseDigitRange"></select>
-    <p>Instructions</p>
-    <div id="inputContainer"></div>
+    <form id="inputContainer"></form>
     <div id="errorMessage"></div>
-    <button id="submitGuess">Submit</button>
+    <p>Set Secret Code Length</p>
+    <button id="submitGuess" disabled="disabled">Submit</button>
+    <p id>Set Secret Digit Range</p>
     <button id="resetGame">Reset Game</button>
     <div id="secretCodeContainer"></div>
     <br><br>

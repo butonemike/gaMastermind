@@ -1,4 +1,3 @@
-// don't forget to add the number to the color in the feedback rows
 var secretCodeLength, digitRange, secretCode, userGuess, whiteCount, blackCount, turn, validGuesses;
 
 function run() {
@@ -9,21 +8,16 @@ function run() {
     for (var i = 1; i < 10; i++) {
         $('#chooseSecretCodeLength').append(`<option value="${i}">${i}</option>`);
         $('#chooseDigitRange').append(`<option value="${i}">${i}</option>`);
-        // var selected = (i == codeLength) ? "selected" : "";
     }
+
+    $('#submitGuess').click(handleSubmit);
+    $('#resetGame').click(handleReset);
 
     initializeGame();
 }
-// var codeCap = $('#codeLength').val();
-
-// 2. error handling for invalid inputs (e.g. blank fields or non numeric characters)
-
-// don't do post colelction validation. validate each individual input in real time; feedback via css: color boxes red and disable submit button until guess is valid
 
 function initializeGame() {
-    var validGuesses =  /^[1-4]+$/;
     generateSecretCode();
-    console.log('sc ' + secretCode);
     generateInputFields();
     appendSecretCode();
     clearFeedback();
@@ -37,15 +31,15 @@ function generateSecretCode() {
     for (var num = 0; num < secretCodeLength; num++) {
         secretCode.push(Math.floor(Math.random() * digitRange) + 1);
     }
-
+    console.log('sc ' + secretCode);
     return secretCode;
 }
 
-function generateInputFields() {    
+function generateInputFields() {
     $('#inputContainer').html('');
 
     for (var i = 1; i <= secretCodeLength; i++) {
-        $('#inputContainer').append(`<input id="input${i}" type="text" minlength="1" maxlength="1" pattern="[1-${digitRange}]" max="${digitRange}" class="userInput">`);
+        $('#inputContainer').append(`<input id="input${i}" type="text" minlength="1" maxlength="1" pattern="[1-${digitRange}]" class="noBueno">`);
     }
 }
 
@@ -54,6 +48,21 @@ function appendSecretCode() {
 
     for (var i = 0; i < secretCodeLength; i++) {
         $('#secretCodeContainer').append('<div class="mysteryPeg">?</div>');
+    }
+}
+
+function validateGuess() {
+    var validSlots = $('.muyBueno').length;
+
+    if (validSlots == secretCodeLength) {
+        $('#submitGuess').removeAttr('disabled');
+        // $('input').keyup(function(event) {
+        //     if (event.keyCode == 13) {
+        //         handleSubmit();
+        //     }
+        // });
+    } else {
+        $('#submitGuess').attr('disabled','disabled');
     }
 }
 
@@ -68,6 +77,7 @@ function handleSubmit() {
 function handleReset() {
     secretCodeLength = parseInt($('#chooseSecretCodeLength').val());
     digitRange = parseInt($('#chooseDigitRange').val());
+
     initializeGame();
 }
 
@@ -133,8 +143,6 @@ function appendFeedbackToRow() {
 }
 
 function appendGuess() {
-    console.log(userGuess)
-    console.log(userGuess.length)
     for (var i = 0; i < secretCodeLength; i++) {
         $(`.gc${turn}`).append(`<div class="guessPeg guessPeg${userGuess[i]}">${userGuess[i]}</div>`);
     }
@@ -157,82 +165,31 @@ function clearFeedback() {
 }
 
 function initializeEventListeners() {
-    // add button listeners
-
-    $('#submitGuess').attr('disabled','disabled');
-    $('#submitGuess').click(handleSubmit);
-    $('#resetGame').click(handleReset);
-
-    // advance pointer to next input field once current field has been populated
-
-    $('.userInput').keyup(function() {
+    $('input').keyup(function() {
         if ($(this).val()) {
             $(this).next().focus();
         }
     });
 
-    // move pointer to previous input field when 'delete' is pressed in current field
-
-    $('.userInput').keyup(function(event) {
-        // if () {
-            if (event.keyCode == 8) {
-                $(this).prev().focus();
-            }
-        // }
-    });
-
-    // add 'submit' functionality to 'enter' key
-
-    $('.userInput').keyup(function(event) {
-        if (event.keyCode == 13) {
-            handleSubmit();
+    $('input').keyup(function(event) {
+        if (event.keyCode == 8) {
+            $(this).prev().focus();
         }
     });
 
-    // add css feedback for input validation: box with invalid entry turns red upon entry and is autocleared on refocus
-
-    var inputs = $('.userInput')
+    var inputs = $('input')
     
     for (var i = 0; i < inputs.length; i++) {
-        inputs[i].addEventListener('focus', function() {
-            if (!this.validity.valid) {
+        inputs[i].addEventListener('keyup', function() {
+            if (!this.validity.valid || this.value == '') {
                 this.value = '';
+                this.setAttribute('class', 'noBueno');
+            } else {
+                this.setAttribute('class', 'muyBueno')
             }
+            validateGuess();
         }, false);
     }
-    
-    $('input').keyup(function() {
-        var validInput = false;
-        validGuesses = /^[1-4]+$/
-        $('input').each(function() {
-            if (validGuesses.test($(this).val())) {
-                validInput = true;
-            } else {
-                validInput = false;
-            }
-        });
-
-        if (validInput) {
-            $('#submitGuess').removeAttr('disabled');
-        }
-    });
-}
-
-
-
-// function validateUserInput() {
-//     var validGuesses =  /^[1-4]+$/;
-    
-//     for (var i = 0; i < userGuess.length; i++) {
-//         if (!validGuesses.test(userGuess[i])) {
-//             console.log('oy, whats all this then?!')
-//             return false;
-//         }
-//     }
-// }
-
-function validateUserInputTemp() {
-
 }
 
 run();
