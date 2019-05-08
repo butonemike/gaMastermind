@@ -88,12 +88,22 @@ function handleReset() {
     initializeGame();
 }
 
+function checkForWin() {
+    console.log(blackCount);
+    console.log(secretCodeLength);
+    if (blackCount == secretCodeLength) {
+        $('input').attr('disabled','disabled');
+        $('#submitGuess').attr('disabled','disabled');
+    }
+}
+
 function render() {
     createNewFeedbackRow();
     appendFeedbackToRow();
     generateInputFields();
     initializeEventListeners();
     $('#input1').focus();
+    checkForWin();
 }
 
 function getGuess() {
@@ -132,6 +142,7 @@ function getWhiteCount() {
 
 function createNewFeedbackRow() {
     $('#feedbackContainer').append(`
+        <div class="turnContainer tc${turn}"></div>
         <div class="guessContainer gc${turn}"></div>
         <div class="dotContainer dc${turn}">
             <div class="blackContainer bc${turn}"></div>
@@ -141,9 +152,14 @@ function createNewFeedbackRow() {
 }
 
 function appendFeedbackToRow() {
+    appendTurn();
     appendGuess();
     appendBlackDots();
     appendWhiteDots();
+}
+
+function appendTurn() {
+    $(`.tc${turn}`).append(`<div class="turn">${turn}</div>`);
 }
 
 function appendGuess() {
