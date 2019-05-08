@@ -13,17 +13,27 @@
     </head>
 <body>
     <h1>Mastermind</h1>
-    <p id="gameInstructions">Instructions</p>
-    <select id="chooseSecretCodeLength"></select>
-    <select id="chooseDigitRange"></select>
-    <form id="inputContainer"></form>
+    <div id="gameInstructions">
+        <h2>Instructions</h2>
+        <p>Each guess is made by placing a row of code pegs on the decoding board. Once placed, the codemaker provides feedback by placing from zero to four key pegs in the small holes of the row with the guess. A colored or black key peg is placed for each code peg from the guess which is correct in both color and position.</p>
+    </div>
     <div id="errorMessage"></div>
-    <p>Set Secret Code Length</p>
-    <button id="submitGuess" disabled="disabled">Submit</button>
-    <p id>Set Secret Digit Range</p>
-    <button id="resetGame">Reset Game</button>
+    <div id="gameSettings">
+        <div>
+            <p>Code Length</p>
+            <div id="fuck"><select id="chooseSecretCodeLength"></select></div>
+        </div>
+        <div>
+            <p>Digit Range</p>
+            <div><select id="chooseDigitRange"></select></div>
+        </div>
+    </div>
+    <form id="inputContainer"></form>
+    <div id="buttonContainer">
+        <button id="submitGuess" class="btn btn-primary" disabled="disabled">Submit</button>
+        <button id="resetGame" class="btn btn-danger">Reset Game</button>
+    </div>
     <div id="secretCodeContainer"></div>
-    <br><br>
     <div id="feedbackContainer"></div>
 </body>
 </html>
