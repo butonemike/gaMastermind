@@ -1,8 +1,8 @@
 #mainContainer {
     margin: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    /* grid-template-rows: 10% auto 10% 60px 60px 60px 50%; */
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: auto auto 80px 60px 60px 60px;
     grid-template-areas: 
         "title"
         "instructions"
@@ -14,6 +14,14 @@
     /* height: 100vh; */
     width: 100vw;
     font-family: 'Rubik', sans-serif;
+    justify-items: center;
+}
+
+#feedbackContainer {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    background-color: violet;
+    width: auto;
     justify-items: center;
 }
 
@@ -50,10 +58,6 @@ h1 {
     background-color: indigo;
 }
 
-#feedbackContainer {
-    /* grid-area: feedback; */
-    background-color: violet;
-}
 
 h1, h2 {
     text-align: center;
@@ -82,31 +86,29 @@ input:focus:invalid {
 #gameSettings > p {
     width: 10px;
 }
-
-#feedbackContainer{
-    display: flex;
-    flex-direction: column;
-}
-
 /* A bunch of things are being styled in some way that's preventing gcs from working. Figure out tomorrow. */
 
-/* .heading, #gameInstructions, #gameSettings, #inputContainer, #buttonContainer, #secretCodeContainer, .guessContainer{
+#gameSettings, #inputContainer, #buttonContainer, #secretCodeContainer, .guessContainer {
     grid-column-start: 2;
-} */
+}
 
-/* .dotContainer {
+.heading, #gameInstructions {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.dotContainer {
     grid-column-start: 3;
-} */
+    align-self: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: left;
+}
 
 #inputContainer, #secretCodeContainer, .guessContainer, .blackContainer, .whiteContainer, .turnFeedback, #buttonContainer, #secretCodeContainer {
     display: flex;
     flex-direction: row;
-}
-
-.dotContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .mysteryPeg {

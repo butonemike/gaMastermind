@@ -132,13 +132,10 @@ function getWhiteCount() {
 
 function createNewFeedbackRow() {
     $('#feedbackContainer').append(`
-        <div class="turnFeedback tf${turn}">
-            <div class="guessContainer gc${turn}"></div>
-            <div class="spacer"></div>
-            <div class="dotContainer dc${turn}">
-                <div class="blackContainer bc${turn}"></div>
-                <div class="whiteContainer wc${turn}"></div>
-            </div>
+        <div class="guessContainer gc${turn}"></div>
+        <div class="dotContainer dc${turn}">
+            <div class="blackContainer bc${turn}"></div>
+            <div class="whiteContainer wc${turn}"></div>
         </div>
     `)
 }
