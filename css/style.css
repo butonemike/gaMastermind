@@ -1,20 +1,58 @@
-#container {
+#mainContainer {
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 10% auto 10% 60px 60px 60px 50%;
+    /* grid-template-rows: 10% auto 10% 60px 60px 60px 50%; */
     grid-template-areas: 
         "title"
         "instructions"
         "settings"
         "inputs"
         "buttons"
-        "blackBox"
-        "feedback";
-    height: 100vh;
+        "blackBox";
+        /* "feedback"; */
+    /* height: 100vh; */
     width: 100vw;
     font-family: 'Rubik', sans-serif;
     justify-items: center;
+}
+
+h1 {
+    grid-area: title;
+    background-color: red;
+}
+
+#gameInstructions {
+    grid-area: instructions;
+    background-color: orange;
+}
+
+#gameSettings {
+    grid-area: settings;
+    display: flex;
+    justify-content: space-around;
+    background-color: yellow;
+    align-items: center; 
+}
+
+#inputContainer {
+    grid-area: inputs;
+    background-color: green;
+}
+
+#buttonContainer {
+    grid-area: buttons;
+    background-color: blue;
+}
+
+#secretCodeContainer {
+    grid-area: blackBox;
+    background-color: indigo;
+}
+
+#feedbackContainer {
+    /* grid-area: feedback; */
+    background-color: violet;
 }
 
 h1, h2 {
@@ -157,54 +195,3 @@ input:focus:invalid {
 #gameSettings, #inputContainer, #buttonContainer, #secretCodeContainer {
     align-items: center;
 }
-
-h1 {
-    grid-area: title;
-    background-color: red;
-}
-
-#gameInstructions {
-    grid-area: instructions;
-    background-color: orange;
-}
-
-/* #chooseSecretCodeLength {
-    grid-area: setL;
-}
-    
-#chooseDigitRange {
-    grid-area: setR;
-} */
-
-#gameSettings {
-    grid-area: settings;
-    display: flex;
-    justify-content: space-around;
-    background-color: yellow;
-    align-items: center; 
-}
-
-#inputContainer {
-    grid-area: inputs;
-    background-color: green;
-}
-
-#buttonContainer {
-    grid-area: buttons;
-    background-color: blue;
-}
-
-#secretCodeContainer {
-    grid-area: blackBox;
-    background-color: indigo;
-}
-
-#feedbackContainer {
-    grid-area: feedback;
-    background-color: violet;
-}
-
-/* button {
-    align-self: center;
-    justify-self: center;
- } */
