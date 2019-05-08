@@ -1,7 +1,6 @@
 var secretCodeLength, digitRange, secretCode, userGuess, whiteCount, blackCount, turn, validGuesses;
 
 function run() {
-
     secretCodeLength = 4;
     digitRange = 4;
 
@@ -39,7 +38,7 @@ function generateInputFields() {
     $('#inputContainer').html('');
 
     for (var i = 1; i <= secretCodeLength; i++) {
-        $('#inputContainer').append(`<input id="input${i}" type="text" minlength="1" maxlength="1" pattern="[1-${digitRange}]" class="noBueno">`);
+        $('#inputContainer').append(`<input id="input${i}" type="text" minlength="1" maxlength="1" pattern="[1-${digitRange}]" class="isInvalid">`);
     }
 }
 
@@ -47,12 +46,12 @@ function appendSecretCode() {
     $('#secretCodeContainer').html('');
 
     for (var i = 0; i < secretCodeLength; i++) {
-        $('#secretCodeContainer').append('<div class="mysteryPeg">?</div>');
+        $('#secretCodeContainer').append(`<div class="mysteryPeg mP${i}">?</div>`);
     }
 }
 
 function validateGuess() {
-    var validSlots = $('.muyBueno').length;
+    var validSlots = $('.isValid').length;
 
     if (validSlots == secretCodeLength) {
         $('#submitGuess').removeAttr('disabled');
@@ -89,11 +88,14 @@ function handleReset() {
 }
 
 function checkForWin() {
-    console.log(blackCount);
-    console.log(secretCodeLength);
     if (blackCount == secretCodeLength) {
         $('input').attr('disabled','disabled');
         $('#submitGuess').attr('disabled','disabled');
+        $(`#secretCodeContainer`).html('');
+
+        for (var i = 0; i < secretCodeLength; i++) {
+            $(`#secretCodeContainer`).append(`<div class="guessPeg guessPeg${secretCode[i]}">${secretCode[i]}</div>`);
+        }
     }
 }
 
@@ -197,19 +199,28 @@ function initializeEventListeners() {
         }
     });
 
-    var inputs = $('input')
+    var inputs = $('input');
     
     for (var i = 0; i < inputs.length; i++) {
         inputs[i].addEventListener('keyup', function() {
             if (!this.validity.valid || this.value == '') {
                 this.value = '';
-                this.setAttribute('class', 'noBueno');
+                this.setAttribute('class', 'isInvalid');
             } else {
-                this.setAttribute('class', 'muyBueno')
+                this.setAttribute('class', 'isValid');
             }
             validateGuess();
         }, false);
     }
+
+    // for (var i = 0; i < inputs.length; i++) {
+    //     $('input').each(function(){
+    //         if($(this).val() == ''){
+    //             this.focus();
+    //             return false;
+    //         }
+    //     });
+    // }
 }
 
 run();

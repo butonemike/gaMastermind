@@ -13,10 +13,11 @@
     </head>
 <body>
     <div id="mainContainer">
+    <div id="gameContainer">
         <h1 class="heading">Mastermind</h1>
         <div id="gameInstructions">
             <h2>Instructions</h2>
-            <p>Each guess is made by placing a row of code pegs on the decoding board. Once placed, the codemaker provides feedback by placing from zero to four key pegs in the small holes of the row with the guess. A colored or black key peg is placed for each code peg from the guess which is correct in both color and position.</p>
+            <p>The purpose of Mastermind is to figure out the secret numeric code set by the computer. The length of the code and maximum digit allowed in each slot is indicated in the settings menu below. Enter your guess click Submit. Each time you submit a guess, you'll be given feedback indicating how close you are. White dots indicate how many digits in your guess appear in the secret code but in an incorrect position. Black dots indicate how many digits in your guess appear in the secret code and in the correct position.</p>
         </div>
         <div id="gameSettings">
             <div>
@@ -36,5 +37,6 @@
         <div id="secretCodeContainer"></div>
     </div>
     <div id="feedbackContainer"></div>
+    </div>
 </body>
 </html>

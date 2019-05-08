@@ -1,4 +1,10 @@
 #mainContainer {
+    height: 100vh;
+    background-color: #ccc;
+}
+
+#gameContainer {
+    background-color: #ccc;
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
@@ -16,9 +22,9 @@
 }
 
 #feedbackContainer {
+    background-color: #ccc;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    background-color: violet;
     width: auto;
     justify-items: center;
 }
@@ -106,8 +112,8 @@ input:focus:invalid {
 }
 
 .heading, #gameInstructions {
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
 #inputContainer, #secretCodeContainer, .guessContainer, .blackContainer, .whiteContainer, .turnFeedback, #buttonContainer, #secretCodeContainer {
@@ -118,10 +124,6 @@ input:focus:invalid {
 .mysteryPeg {
     background-color: black;
     color: white;
-}
-
-.spacer {
-    width: 20px;
 }
 
 .dot {
@@ -140,11 +142,6 @@ input:focus:invalid {
     background-color: black;
 }
 
-.guessContainer > div, .mysteryPeg {
-    height: 40px;
-    width: 40px;
-}
-
 #gameSettings > div {
     display: flex;
     flex-direction: column;
@@ -152,10 +149,11 @@ input:focus:invalid {
     align-items: center;
     margin: 15px;
     border: 1px black solid;
-    
 }
 
 .guessPeg, .mysteryPeg {
+    height: 40px;
+    width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
