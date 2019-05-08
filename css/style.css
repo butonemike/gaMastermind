@@ -1,4 +1,4 @@
-body {
+#container {
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -13,7 +13,6 @@ body {
         "feedback";
     height: 100vh;
     width: 100vw;
-    color: white;
     font-family: 'Rubik', sans-serif;
     justify-items: center;
 }
@@ -51,10 +50,15 @@ input:focus:invalid {
     flex-direction: column;
 }
 
-h1 {
-    span: 2;
-    /* grid-column-end: 3; */
-}
+/* A bunch of things are being styled in some way that's preventing gcs from working. Figure out tomorrow. */
+
+/* .heading, #gameInstructions, #gameSettings, #inputContainer, #buttonContainer, #secretCodeContainer, .guessContainer{
+    grid-column-start: 2;
+} */
+
+/* .dotContainer {
+    grid-column-start: 3;
+} */
 
 #inputContainer, #secretCodeContainer, .guessContainer, .blackContainer, .whiteContainer, .turnFeedback, #buttonContainer, #secretCodeContainer {
     display: flex;

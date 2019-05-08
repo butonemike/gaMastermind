@@ -6,8 +6,8 @@ function run() {
     digitRange = 4;
 
     for (var i = 1; i < 10; i++) {
-        $('#chooseSecretCodeLength').append(`<option value="${i}">${i}</option>`);
-        $('#chooseDigitRange').append(`<option value="${i}">${i}</option>`);
+        $('#chooseSecretCodeLength').append(`<option ${i == secretCodeLength ? 'selected' : ''} value="${i}">${i}</option>`);
+        $('#chooseDigitRange').append(`<option ${i == digitRange ? 'selected' : ''} value="${i}">${i}</option>`);
     }
 
     $('#submitGuess').click(handleSubmit);
