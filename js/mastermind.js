@@ -38,7 +38,7 @@ function generateInputFields() {
     $('#inputContainer').html('');
 
     for (var i = 1; i <= secretCodeLength; i++) {
-        $('#inputContainer').append(`<input id="input${i}" type="text" minlength="1" maxlength="1" pattern="[1-${digitRange}]" class="isInvalid">`);
+        $('#inputContainer').append(`<input id="input${i}" type="text" minlength="1" maxlength="1" pattern="[1-${digitRange}]" class="pegLarge">`);
     }
 }
 
@@ -46,7 +46,7 @@ function appendSecretCode() {
     $('#secretCodeContainer').html('');
 
     for (var i = 0; i < secretCodeLength; i++) {
-        $('#secretCodeContainer').append(`<div class="mysteryPeg mP${i}">?</div>`);
+        $('#secretCodeContainer').append(`<div class="mysteryPeg pegLarge mP${i}">?</div>`);
     }
 }
 
@@ -161,12 +161,12 @@ function appendFeedbackToRow() {
 }
 
 function appendTurn() {
-    $(`.tc${turn}`).append(`<div class="turn">${turn}</div>`);
+    $(`.tc${turn}`).append(`<div class="turn pegLarge">${turn}</div>`);
 }
 
 function appendGuess() {
     for (var i = 0; i < secretCodeLength; i++) {
-        $(`.gc${turn}`).append(`<div class="guessPeg guessPeg${userGuess[i]}">${userGuess[i]}</div>`);
+        $(`.gc${turn}`).append(`<div class="guessPeg pegLarge guessPeg${userGuess[i]}">${userGuess[i]}</div>`);
     }
 }
 
@@ -204,14 +204,27 @@ function initializeEventListeners() {
     for (var i = 0; i < inputs.length; i++) {
         inputs[i].addEventListener('keyup', function() {
             if (!this.validity.valid || this.value == '') {
-                this.value = '';
-                this.setAttribute('class', 'isInvalid');
+                $(this).value = '';
+                $(this).removeClass('isValid');
+                $(this).addClass('isInvalid');
             } else {
-                this.setAttribute('class', 'isValid');
+                $(this).removeClass('isInvalid');
+                $(this).addClass('isValid');
             }
             validateGuess();
         }, false);
     }
 }
+
+$(window).scroll(function(e){ 
+    var $el = $('.fixedElement'); 
+    var isPositionFixed = ($el.css('position') == 'fixed');
+    if ($(this).scrollTop() > 200 && !isPositionFixed){ 
+         $el.css({'position': 'fixed', 'top': '0px'}); 
+    }
+    if ($(this).scrollTop() < 200 && isPositionFixed){
+        $el.css({'position': 'static', 'top': '0px'}); 
+    } 
+});
 
 run();

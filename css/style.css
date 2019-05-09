@@ -1,108 +1,101 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 #mainContainer {
     height: 100vh;
-    background-color: #ccc;
+    background: url(../images/brain.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-#gameContainer {
-    background-color: #ccc;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: auto auto auto auto auto auto;
-    grid-template-areas: 
-        "title"
-        "instructions"
-        "settings"
-        "inputs"
-        "buttons"
-        "blackBox";
-    width: 100vw;
-    font-family: 'Rubik', sans-serif;
-    justify-items: center;
+#textContainer > div {
     text-align: justify;
+    margin: 0 auto;
+    width: 400px;
 }
 
-#feedbackContainer {
-    background-color: #ccc;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    width: auto;
-    justify-items: center;
-    overflow: auto;
-}
-
-h1 {
-    grid-area: title;
-}
-
-#gameInstructions {
-    grid-area: instructions;
-    background-color: orange;
-}
 
 #gameSettings {
-    grid-area: settings;
     display: flex;
-    justify-content: space-around;
-    background-color: yellow;
-    align-items: center; 
-}
-
-#inputContainer {
-    grid-area: inputs;
-    background-color: green;
-}
-
-#buttonContainer {
-    grid-area: buttons;
-    background-color: blue;
-    margin: 5px;
-    padding: 5px;
     justify-content: center;
+    text-align: justify;
+    margin: 0 auto;
 }
 
-#secretCodeContainer {
-    grid-area: blackBox;
-    background-color: indigo;
-}
-
-.dotContainer {
-    grid-column-start: 3;
+.gameSetting {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    justify-self: left;
-    margin-left: 10px;
-}
-
-.turnContainer {
-    display: flex;
-    grid-column-start: 1;
-    justify-self: right;
-    align-items: center;
-    margin-right: 5px;
-}
-
-.turn {
-    height: 22px;
-    width: 22px;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 12px;
+    text-align: justify;
+    object-position: center;
+    margin: 0 auto;
 }
 
 h1, h2 {
     text-align: center;
 }
 
+#playContainer {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "inputs"
+        "buttons"
+        "mysteryBox";
+    width: 100vw;
+    justify-items: center;
+}
+
+#inputContainer, #buttonContainer, #secretCodeContainer, .turnContainer, .guessContainer, .dotContainer, .blackContainer, .whiteContainer {
+    display: flex;
+}
+
 input[type="text"] {
-    height: 22px;
-    width: 22px;
     text-align: center;
-    font-size: 14px;
     margin: 1px;
 }
 
@@ -114,35 +107,91 @@ input:focus:invalid {
     
 }
 
-.guessPeg, .mysteryPeg {
-    margin: 1px;
-}
-
-#gameSettings > p {
-    width: 10px;
-}
-
-#gameSettings, #inputContainer, #buttonContainer, #secretCodeContainer, .guessContainer {
+#inputContainer, #buttonContainer {
     grid-column-start: 2;
+    grid-column-end: 3;
 }
 
-.heading, #gameInstructions {
-    grid-column-start: 1;
-    grid-column-end: 4;
+#inputContainer {
+    grid-area: inputs;
 }
 
-#inputContainer, #secretCodeContainer, .guessContainer, .blackContainer, .whiteContainer, .turnFeedback, #buttonContainer, #secretCodeContainer {
+#buttonContainer {
+    grid-area: buttons;
+}
+
+#secretCodeContainer {
+    grid-area: mysteryBox;
+}
+
+.guessPeg, .mysteryPeg {
     display: flex;
-    flex-direction: row;
-}
-
-.blackContainer, .whiteContainer {
-    justify-self: center;
-}
-
-.mysteryPeg {
-    background-color: black;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: 16px;
     color: white;
+    border: 1px #999999 solid;
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+.pegLarge {
+    height: 50px;
+    width: 50px;
+    font-size: 26px;
+}
+
+.pegMedium {
+    height: 30px;
+    width: 30px;
+    font-size: 18px;
+}
+
+.pegSmall {
+    height: 22px;
+    width: 22px;
+    font-size: 16px;
+}
+
+#feedbackContainer {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    width: 100vw;
+    justify-items: center;
+}
+
+.turnContainer {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    justify-self: right;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.turn {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.guessContainer {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.dotContainer {
+    flex-direction: column;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    margin-left: 10px;
+    justify-content: center;
+    justify-self: left;
 }
 
 .dot {
@@ -161,96 +210,15 @@ input:focus:invalid {
     background-color: black;
 }
 
-#gameSettings > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 15px;
-    border: 1px black solid;
-}
-
-.guessPeg, .mysteryPeg {
-    height: 22px;
-    width: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 800;
-    font-size: 16px;
-    color: white;
-    border: 1px #999999 solid;
-    text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-		1px 1px 0 #000;
-}
-
-.guessPeg1 {
-    background-color: red;
-}
-
-.guessPeg2 {
-    background-color: orange;
-}
-
-.guessPeg3 {
-    background-color: yellow;
-}
-
-.guessPeg4 {
-    background-color: green;
-}
-
-.guessPeg5 {
-    background-color: blue;
-}
-
-.guessPeg6 {
-    background-color: indigo;
-}
-
-.guessPeg7 {
-    background-color: purple;
-}
-
-.btn-space {
-    margin: 5px;
-}
-
 @media only screen and (min-width: 768px) {
     /* #gameContainer{
         grid-template-columns: 1fr 1fr;
     } */
     input[type="text"] {
-        height: 40px;
-        width: 40px;
-        text-align: center;
-        font-size: 20px;
         margin: 2px;
-    }
-    
-    .turn {
-        height: 40px;
-        width: 40px;
-        font-size: 20px;
     }
 
     .mysteryPeg, .guessPeg {
-        height: 40px;
-        width: 40px;
-        font-size: 26px;
         margin: 2px;
-    }
-
-    .dot {
-        height: 15px;
-        width: 15px;
-    }
-
-    .heading, #gameInstructions {
-        grid-column-start: 2;
-        grid-column-end: 3;
     }
 }
