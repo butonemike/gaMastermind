@@ -59,7 +59,7 @@ body {
 }
 
 #gameContainer {
-    background-color: rgba(0, 0, 0, .62);
+    background-color: rgba(0, 0, 0, .45);
     color: #fff;
 }
 
@@ -143,14 +143,13 @@ body {
 }
 
 .gsLeft {
-    margin-right: 25px;
+    margin-right: 15px;
     margin-left: auto;
 }
 
 .gsRight {
-    margin-left: 25px;
+    margin-left: 15px;
     margin-right: auto;
-
 }
 
 select {
@@ -392,23 +391,18 @@ input:invalid {
         height: 100vh;
     }
 
-    #gameContainer {
-        background-color: rgba(0, 0, 0, .5);
-        color: #fff;
-    }
-
     #textContainer > div {
         width: 60%;
     }
 
-/* ----- SHADOW BOXES BELOW ----- */
+/* ----- ALL BORDER BOX SHADOW SETTINGS BELOW ----- */
 
     #instructionsBody, .gameSetting, .modal {
         background-color: rgba(7, 58, 95, .65);
         box-shadow: -1px -1px 14px 10px rgba(7, 58, 95, .75);    
     }
 
-/* ----- SHADOW BOXES ABOVE ----- */
+/* ----- ALL BORDER BOX SHADOW SETTINGS ABOVE ----- */
 
     #gameTitle {
         padding-top: 10px;
@@ -431,14 +425,19 @@ input:invalid {
     .gameSetting {
         height: 50px;
     }
-
+    
+    .gsLeft {
+        margin-right: 17px;
+        margin-left: auto;
+    }
+    
+    .gsRight {
+        margin-left: 17px;
+        margin-right: auto;
+    }
+    
     select, button {
-        color: white;
-        font-weight: 500;
         font-size: 16px;
-        border-radius: 8px;
-        background-color: rgb(0, 81, 131);
-        border: 1px solid white;
     }
 
     input[type="text"] {
