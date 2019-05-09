@@ -27,11 +27,11 @@
     grid-template-columns: 1fr auto 1fr;
     width: auto;
     justify-items: center;
+    overflow: auto;
 }
 
 h1 {
     grid-area: title;
-    /* background-color: red; */
 }
 
 #gameInstructions {
@@ -83,11 +83,11 @@ h1, h2 {
 }
 
 input[type="text"] {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     text-align: center;
-    font-size: 20px;
-    margin: 2px;
+    font-size: 14px;
+    margin: 1px;
 }
 
 input:invalid {
@@ -99,21 +99,20 @@ input:focus:invalid {
 }
 
 .guessPeg, .mysteryPeg {
-    margin: 2px;
+    margin: 1px;
 }
 
 #gameSettings > p {
     width: 10px;
 }
-/* A bunch of things are being styled in some way that's preventing gcs from working. Figure out tomorrow. */
 
 #gameSettings, #inputContainer, #buttonContainer, #secretCodeContainer, .guessContainer {
     grid-column-start: 2;
 }
 
 .heading, #gameInstructions {
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 
 #inputContainer, #secretCodeContainer, .guessContainer, .blackContainer, .whiteContainer, .turnFeedback, #buttonContainer, #secretCodeContainer {
@@ -127,8 +126,8 @@ input:focus:invalid {
 }
 
 .dot {
-    height: 15px;
-    width: 15px;
+    height: 8px;
+    width: 8px;
     border: black solid 1px;
     border-radius: 50%;
     margin: 1px;
@@ -152,13 +151,13 @@ input:focus:invalid {
 }
 
 .guessPeg, .mysteryPeg {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: 800;
-    font-size: 26px;
+    font-size: 16px;
     color: white;
     border: 1px #999999 solid;
     text-shadow:
@@ -198,4 +197,57 @@ input:focus:invalid {
 
 #gameSettings, #inputContainer, #buttonContainer, #secretCodeContainer {
     align-items: center;
+}
+
+.button {
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#resetButton {
+
+}
+
+#submitButton {
+
+}
+
+.btn-gradient {
+	margin: 5px;
+}
+
+.mini {
+    padding: 4px 12px;  
+    font-size: 12px;
+  }
+
+
+@media only screen and (min-width: 768px) {
+    /* #gameContainer{
+        grid-template-columns: 1fr 1fr;
+    } */
+    input[type="text"] {
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        font-size: 20px;
+        margin: 2px;
+    }
+    
+    .mysteryPeg, .guessPeg {
+        height: 40px;
+        width: 40px;
+        font-size: 26px;
+        margin: 2px;
+    }
+
+    .dot {
+        height: 15px;
+        width: 15px;
+    }
+
+    .heading, #gameInstructions {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
 }

@@ -212,15 +212,6 @@ function initializeEventListeners() {
             validateGuess();
         }, false);
     }
-
-    // for (var i = 0; i < inputs.length; i++) {
-    //     $('input').each(function(){
-    //         if($(this).val() == ''){
-    //             this.focus();
-    //             return false;
-    //         }
-    //     });
-    // }
 }
 
 run();
