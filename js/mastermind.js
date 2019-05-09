@@ -1,4 +1,4 @@
-var secretCodeLength, digitRange, secretCode, userGuess, whiteCount, blackCount, turn, validGuesses;
+var secretCodeLength, digitRange, secretCode, userGuess, whiteCount, blackCount, turn, validGuesses, pageWidth, widthMonitor;
 
 function run() {
     secretCodeLength = 4;
@@ -16,6 +16,7 @@ function run() {
 }
 
 function initializeGame() {
+    console.log('init');
     generateSecretCode();
     generateInputFields();
     appendSecretCode();
@@ -38,7 +39,7 @@ function generateInputFields() {
     $('#inputContainer').html('');
 
     for (var i = 1; i <= secretCodeLength; i++) {
-        $('#inputContainer').append(`<input id="input${i}" type="text" minlength="1" maxlength="1" pattern="[1-${digitRange}]" class="pegLarge">`);
+        $('#inputContainer').append(`<input id="input${i}" type="text" minlength="1" maxlength="1" pattern="[1-${digitRange}]" class="${widthMonitor.pegSize}">`);
     }
 }
 
@@ -46,7 +47,7 @@ function appendSecretCode() {
     $('#secretCodeContainer').html('');
 
     for (var i = 0; i < secretCodeLength; i++) {
-        $('#secretCodeContainer').append(`<div class="mysteryPeg pegLarge mP${i}">?</div>`);
+        $('#secretCodeContainer').append(`<div class="mysteryPeg ${widthMonitor.pegSize} mP${i}">?</div>`);
     }
 }
 
@@ -94,7 +95,7 @@ function checkForWin() {
         $(`#secretCodeContainer`).html('');
 
         for (var i = 0; i < secretCodeLength; i++) {
-            $(`#secretCodeContainer`).append(`<div class="guessPeg pegLarge guessPeg${secretCode[i]}">${secretCode[i]}</div>`);
+            $(`#secretCodeContainer`).append(`<div class="guessPeg ${widthMonitor.pegSize} guessPeg${secretCode[i]}">${secretCode[i]}</div>`);
         }
 
         displayVictoryModal();
@@ -176,24 +177,24 @@ function appendFeedbackToRow() {
 }
 
 function appendTurn() {
-    $(`.tc${turn}`).append(`<div class="turn pegLarge">${turn}</div>`);
+    $(`.tc${turn}`).append(`<div class="turn ${widthMonitor.pegSize}">${turn}</div>`);
 }
 
 function appendGuess() {
     for (var i = 0; i < secretCodeLength; i++) {
-        $(`.gc${turn}`).append(`<div class="guessPeg pegLarge guessPeg${userGuess[i]}">${userGuess[i]}</div>`);
+        $(`.gc${turn}`).append(`<div class="guessPeg ${widthMonitor.pegSize} guessPeg${userGuess[i]}">${userGuess[i]}</div>`);
     }
 }
 
 function appendBlackDots() {
     for (var i = 0; i < blackCount; i++) {
-        $(`.bc${turn}`).append(`<div class="black dot dotLarge"></div>`);
+        $(`.bc${turn}`).append(`<div class="black dot ${widthMonitor.dotSize}"></div>`);
     }
 }
 
 function appendWhiteDots() {
     for (var i = 0; i < whiteCount; i++) {
-        $(`.wc${turn}`).append(`<div class="white dot dotLarge"></div>`);
+        $(`.wc${turn}`).append(`<div class="white dot ${widthMonitor.dotSize}"></div>`);
     }
 }
 
@@ -220,15 +221,18 @@ function initializeEventListeners() {
         inputs[i].addEventListener('keyup', function() {
             if (!this.validity.valid || this.value == '') {
                 this.value = '';
-                $(this).removeClass('isValid');
-                $(this).addClass('isInvalid');
+                $(this).removeClass('isValid').addClass('isInvalid');
             } else {
-                $(this).removeClass('isInvalid');
-                $(this).addClass('isValid');
+                $(this).removeClass('isInvalid').addClass('isValid');
             }
             validateGuess();
         }, false);
     }
+}
+
+widthMonitor = {
+    pegSize: 'pegLarge',
+    dotSize: 'dotLarge'
 }
 
 run();

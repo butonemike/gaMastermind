@@ -78,7 +78,7 @@ body {
 #textContainer > div {
     text-align: justify;
     margin: 0 auto;
-    width: 90%;
+    width: 80%;
 }
 
 /* ----- ALL BORDER BOX SHADOW SETTINGS BELOW ----- */
@@ -92,7 +92,7 @@ body {
 
 #gameTitle {
     padding-top: 5px;
-    font-size: 18px;
+    font-size: 22px;
     text-shadow:
 		-1px -1px 0 #000,
 		1px -1px 0 #000,
@@ -102,7 +102,7 @@ body {
 }
 
 #instructionsHead {
-    font-size: 15px;
+    font-size: 18px;
     text-shadow:
 		-1px -1px 0 #000,
 		1px -1px 0 #000,
@@ -113,6 +113,7 @@ body {
 
 #instructionsBody {
     font-size: 12px;
+    line-height: 1.3;
 }
 
 #gameSettings {
@@ -120,7 +121,7 @@ body {
     justify-content: center;
     text-align: justify;
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 .gameSetting {
@@ -254,8 +255,8 @@ input:invalid {
 }
 
 .pegMedium {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     font-size: 18px;
 }
 
@@ -263,6 +264,12 @@ input:invalid {
     height: 22px;
     width: 22px;
     font-size: 16px;
+}
+
+.pegXSmall {
+    height: 15px;
+    width: 15px;
+    font-size: 12px;
 }
 
 #feedbackContainer {
@@ -308,9 +315,9 @@ input:invalid {
     margin: 1px;
 }
 
-.dotSmall {
-    height: 5px;
-    width: 5px;
+.dotLarge {
+    height: 15px;
+    width: 15px;
 }
 
 .dotMedium {
@@ -318,10 +325,17 @@ input:invalid {
     width: 10px;
 }
 
-.dotLarge {
-    height: 15px;
-    width: 15px;
+.dotSmall {
+    height: 5px;
+    width: 5px;
 }
+
+.dotXSmall {
+    height: 3px;
+    width: 3px;
+}
+
+
 
 .white {
     background-color: white;
@@ -378,43 +392,37 @@ input:invalid {
 .modal {
     background-color: rgba(7, 58, 95, .9);
     color: white;
-    margin: 60% auto;
+    margin: 45% auto;
     padding: 20px;
     width: 80%;
     font-size: 16px;
 }
 
-@media only screen and (min-width: 768px) {
-    #mainContainer {
-        background: url(../images/brain.jpg) no-repeat scroll center top transparent; 
-        background-size: 80%;
-        height: 100vh;
-    }
-
+@media only screen and (min-width: 500px) {
     #textContainer > div {
-        width: 60%;
+        width: 70%;
     }
-
-/* ----- ALL BORDER BOX SHADOW SETTINGS BELOW ----- */
-
-    #instructionsBody, .gameSetting, .modal {
-        background-color: rgba(7, 58, 95, .65);
-        box-shadow: -1px -1px 14px 10px rgba(7, 58, 95, .75);    
-    }
-
-/* ----- ALL BORDER BOX SHADOW SETTINGS ABOVE ----- */
 
     #gameTitle {
         padding-top: 10px;
         font-size: 36px;
     }
-
+    
     #instructionsHead {
         font-size: 26px;
     }
+    
+    /* ----- ALL BORDER BOX SHADOW SETTINGS BELOW ----- */
+    
+    #instructionsBody, .gameSetting, .modal {
+        background-color: rgba(7, 58, 95, .65);
+        box-shadow: -1px -1px 14px 10px rgba(7, 58, 95, .75);    
+    }
+    
+    /* ----- ALL BORDER BOX SHADOW SETTINGS ABOVE ----- */
 
     #instructionsBody {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1.3;
     }
 
@@ -446,7 +454,7 @@ input:invalid {
 
     #buttonContainer {
         padding: 10px 0;
-        margin: 15px; 
+        margin: 5px; 
     }
 
     .mysteryPeg, .guessPeg {
@@ -459,5 +467,22 @@ input:invalid {
         margin: 15% auto;
         width: 40%;
         font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #mainContainer {
+        background: url(../images/brain.jpg) no-repeat scroll center top transparent; 
+        background-size: 80%;
+        height: 100vh;
+    }
+
+    #textContainer > div {
+        width: 60%;
+    }
+    
+    #instructionsBody {
+        font-size: 16px;
+        line-height: 1.3;
     }
 }
