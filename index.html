@@ -12,7 +12,7 @@
 <body>
     <div id="mainContainer">
         <div id="textContainer">
-            <h1 class="heading glow">Mastermind</h1>
+            <h1 id="heading" class="glow">Mastermind</h1>
             <div id="gameInstructions" class="glow">
                 <h2>Instructions</h2>
                 <p>The purpose of Mastermind is to figure out the secret numeric code set by the computer. The length of the code and maximum digit allowed in each slot is indicated in the settings menu below. Enter your guess and click Submit. A valid guess can be 1234, 1122, or any combination of digits that fits the game settings. Each time you submit a guess, you'll be given feedback indicating how close you are. White dots indicate how many digits in your guess appear in the secret code but in an incorrect position. Black dots indicate how many digits in your guess appear in the secret code and in the correct position.</p>
@@ -20,12 +20,16 @@
             <div id="backPanel" class="glow"></div>
             <div id="gameSettings" class="glow">
                 <div class="gameSetting">
-                    <p>Code Length</p>
-                    <div class="gameSetting"><select id="chooseSecretCodeLength"></select></div>
+                    <div class="gameSetting">
+                        <p>Code Length</p>
+                        <select id="chooseSecretCodeLength"></select>
+                    </div>
                 </div>
                 <div class="gameSetting">
-                    <p>Digit Range</p>
-                    <div class="gameSetting"><select id="chooseDigitRange"></select></div>
+                    <div class="gameSetting">
+                        <p>Digit Range</p>
+                        <select id="chooseDigitRange"></select>
+                    </div>
                 </div>
             </div>
         </div>
@@ -33,12 +37,13 @@
             <div class="scrollAnchor"></div>
             <form id="inputContainer" class="glow"></form>
             <div id="buttonContainer" class="glow">
-                <button id="submitGuess" class="btn btn-space btn-primary btn-sm" disabled="disabled">Submit</button>
                 <button id="resetGame" class="btn btn-space btn-danger btn-sm">Reset Game</button>
+                <button id="submitGuess" class="btn btn-space btn-primary btn-sm" disabled="disabled">Submit</button>
             </div>
             <div id="secretCodeContainer" class="glow"></div>
         </div>
         <div id="feedbackContainer" class="glow"></div>
     </div>
+    
 </body>
 </html>

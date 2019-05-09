@@ -94,7 +94,7 @@ function checkForWin() {
         $(`#secretCodeContainer`).html('');
 
         for (var i = 0; i < secretCodeLength; i++) {
-            $(`#secretCodeContainer`).append(`<div class="guessPeg guessPeg${secretCode[i]}">${secretCode[i]}</div>`);
+            $(`#secretCodeContainer`).append(`<div class="guessPeg pegLarge guessPeg${secretCode[i]}">${secretCode[i]}</div>`);
         }
     }
 }
@@ -172,13 +172,13 @@ function appendGuess() {
 
 function appendBlackDots() {
     for (var i = 0; i < blackCount; i++) {
-        $(`.bc${turn}`).append(`<div class="black dot"></div>`);
+        $(`.bc${turn}`).append(`<div class="black dot dotLarge"></div>`);
     }
 }
 
 function appendWhiteDots() {
     for (var i = 0; i < whiteCount; i++) {
-        $(`.wc${turn}`).append(`<div class="white dot"></div>`);
+        $(`.wc${turn}`).append(`<div class="white dot dotLarge"></div>`);
     }
 }
 
@@ -204,7 +204,7 @@ function initializeEventListeners() {
     for (var i = 0; i < inputs.length; i++) {
         inputs[i].addEventListener('keyup', function() {
             if (!this.validity.valid || this.value == '') {
-                $(this).value = '';
+                this.value = '';
                 $(this).removeClass('isValid');
                 $(this).addClass('isInvalid');
             } else {
