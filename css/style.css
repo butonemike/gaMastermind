@@ -8,7 +8,7 @@
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: auto auto 80px 60px 60px 60px;
+    grid-template-rows: auto auto auto auto auto auto;
     grid-template-areas: 
         "title"
         "instructions"
@@ -19,6 +19,7 @@
     width: 100vw;
     font-family: 'Rubik', sans-serif;
     justify-items: center;
+    text-align: justify;
 }
 
 #feedbackContainer {
@@ -55,6 +56,9 @@ h1 {
 #buttonContainer {
     grid-area: buttons;
     background-color: blue;
+    margin: 5px;
+    padding: 5px;
+    justify-content: center;
 }
 
 #secretCodeContainer {
@@ -68,6 +72,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     justify-self: left;
+    margin-left: 10px;
 }
 
 .turnContainer {
@@ -78,13 +83,24 @@ h1 {
     margin-right: 5px;
 }
 
+.turn {
+    height: 22px;
+    width: 22px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 12px;
+}
+
 h1, h2 {
     text-align: center;
 }
 
 input[type="text"] {
-    height: 30px;
-    width: 30px;
+    height: 22px;
+    width: 22px;
     text-align: center;
     font-size: 14px;
     margin: 1px;
@@ -120,14 +136,18 @@ input:focus:invalid {
     flex-direction: row;
 }
 
+.blackContainer, .whiteContainer {
+    justify-self: center;
+}
+
 .mysteryPeg {
     background-color: black;
     color: white;
 }
 
 .dot {
-    height: 8px;
-    width: 8px;
+    height: 5px;
+    width: 5px;
     border: black solid 1px;
     border-radius: 50%;
     margin: 1px;
@@ -151,8 +171,8 @@ input:focus:invalid {
 }
 
 .guessPeg, .mysteryPeg {
-    height: 30px;
-    width: 30px;
+    height: 22px;
+    width: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -195,32 +215,9 @@ input:focus:invalid {
     background-color: purple;
 }
 
-#gameSettings, #inputContainer, #buttonContainer, #secretCodeContainer {
-    align-items: center;
+.btn-space {
+    margin: 5px;
 }
-
-.button {
-    border-radius: 4px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-#resetButton {
-
-}
-
-#submitButton {
-
-}
-
-.btn-gradient {
-	margin: 5px;
-}
-
-.mini {
-    padding: 4px 12px;  
-    font-size: 12px;
-  }
-
 
 @media only screen and (min-width: 768px) {
     /* #gameContainer{
@@ -234,6 +231,12 @@ input:focus:invalid {
         margin: 2px;
     }
     
+    .turn {
+        height: 40px;
+        width: 40px;
+        font-size: 20px;
+    }
+
     .mysteryPeg, .guessPeg {
         height: 40px;
         width: 40px;
