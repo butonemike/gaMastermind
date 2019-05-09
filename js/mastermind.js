@@ -95,30 +95,19 @@ function checkForWin() {
 
         for (var i = 0; i < secretCodeLength; i++) {
             $(`#secretCodeContainer`).append(`<div class="guessPeg pegLarge guessPeg${secretCode[i]}">${secretCode[i]}</div>`);
-        
         }
-        
+
         displayVictoryModal();
     }
 }
 
-
-// When the user clicks on <span> (x), close the modal
 function displayVictoryModal() {
-    console.log('in dvm');
     var modal = $('#victoryModal');
     var close = $('#closeVictoryModal');
-
-    console.log('modal ' + modal);
-    console.log('modal css ' + modal.css);
 
     (function () {
         modal.css('display', 'block');
     })();
-
-    // close.onclick = function() {
-    //     modal.css('display', 'none');
-    // }
 
     $(window).click(function() {
         modal.css('display', 'none');

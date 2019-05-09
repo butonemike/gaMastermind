@@ -6,51 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mastermind</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Mukta|Varela+Round" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script defer src="js/mastermind.js"></script>
 </head>
 <body>
     <div id="mainContainer">
-        <div id="textContainer">
-            <h1 id="heading" class="glow">Mastermind</h1>
-            <div id="gameInstructions" class="glow">
-                <h2>Instructions</h2>
-                <p>The purpose of Mastermind is to figure out the secret numeric code set by the computer. The length of the code and maximum digit allowed in each slot is indicated in the settings menu below. Enter your guess and click Submit. A valid guess can be 1234, 1122, or any combination of digits that fits the game settings. Each time you submit a guess, you'll be given feedback indicating how close you are. White dots indicate how many digits in your guess appear in the secret code but in an incorrect position. Black dots indicate how many digits in your guess appear in the secret code and in the correct position.</p>
-            </div>
-            <div id="backPanel" class="glow"></div>
-            <div id="gameSettings" class="glow">
-                <div class="gameSetting">
+        <div id="gameContainer">
+            <div id="textContainer">
+                <h1 id="gameTitle" class="glow">Mastermind</h1>
+                <br>
+                <div id="instrcutionsContainer" class="glow">
+                    <h2 id="instructionsHead">Instructions</h2>
+                    <br>
+                    <p id="instructionsBody">
+                        Figure out the secret code. The length of the code and maximum digit allowed in each slot is indicated in the settings menu below. 
+                        Enter your guess and click Submit. A valid guess can be 1234, 1122, or any combination of digits that fits the game settings. 
+                        Each time you submit a guess, you'll be given feedback indicating how close you are. 
+                        White dots indicate how many digits in your guess appear in the secret code but in an incorrect position. 
+                        Black dots indicate how many digits in your guess appear in the secret code and in the correct position.
+                    </p>
+                </div>
+                <div id="backPanel" class="glow"></div>
+                <div id="gameSettings" class="glow">
                     <div class="gameSetting">
                         <p>Code Length</p>
                         <select id="chooseSecretCodeLength"></select>
                     </div>
-                </div>
-                <div class="gameSetting">
                     <div class="gameSetting">
                         <p>Digit Range</p>
                         <select id="chooseDigitRange"></select>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="playContainer">
-            <div class="scrollAnchor"></div>
-            <form id="inputContainer" class="glow"></form>
-            <div id="buttonContainer" class="glow">
-                <button id="resetGame" class="btn btn-space btn-danger btn-sm">Reset Game</button>
-                <button id="submitGuess" class="btn btn-space btn-primary btn-sm" disabled="disabled">Submit</button>
+            <div id="playContainer">
+                <div class="scrollAnchor"></div>
+                <form id="inputContainer" class="glow"></form>
+                <div id="buttonContainer" class="glow">
+                    <button id="resetGame" class="btn btn-space btn-danger btn-sm">Reset Game</button>
+                    <button id="submitGuess" class="btn btn-space btn-primary btn-sm" disabled="disabled">Submit</button>
+                </div>
+                <div id="secretCodeContainer" class="glow"></div>
             </div>
-            <div id="secretCodeContainer" class="glow"></div>
+            <div id="feedbackContainer" class="glow"></div>
         </div>
-        <div id="feedbackContainer" class="glow"></div>
-    </div>
-    <div id="victoryModal" class="modalContainer">
-        <div class="modal">
-            <p>Congratulations! You won!</p>
-            <p>Click 'Reset Game' to play again.</p>
-            <p>If you want a bigger challenge, try changing the game settings.</p>
-            <br><br>
-            <p>Click anywhere to close)</p>
+        <div id="victoryModal" class="modalContainer">
+            <div class="modal">
+                <p>Congratulations! You won!</p><br>
+                <p>Click 'Reset Game' to play again.</p><br>
+                <p>If you want a bigger challenge, try changing the game settings.</p>
+                <br><br>
+                <p>(Click anywhere to close)</p>
+            </div>
         </div>
     </div>
 </body>

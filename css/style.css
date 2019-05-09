@@ -42,30 +42,68 @@ table {
 	border-spacing: 0;
 }
 
-#mainContainer {
-    height: 100vh;
-    width: 375px;
-    background: url(../images/brain.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    margin: 0 auto;
+/* 
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Mukta', sans-serif; 
+font-family: 'Varela Round', sans-serif;
+*/
+
+body {
+    background-color: rgb(2, 158, 255);
 }
 
-#textContainer {
-    /* background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%); */
+#mainContainer {
+    background: url(../images/brain.jpg) no-repeat scroll center top transparent; 
+    background-size: 120%;
+    height: 100vh;
 }
+
+#gameContainer {
+    background-color: rgba(0, 0, 0, .62);
+    color: #fff;
+}
+
+/* ----- ALL FONT FAMILY SETTINGS BELOW ----- */
+
+#textContainer, input[type="text"], .mysteryPeg, .turn, .guessPeg {
+    font-family: 'Mukta', sans-serif; 
+}
+
+.modal {
+    font-family: 'Varela Round', sans-serif;
+}
+
+/* ----- ALL FONT FAMILY SETTINGS ABOVE ----- */
 
 #textContainer > div {
     text-align: justify;
     margin: 0 auto;
-    width: 375px;
-    /* background-color: rgba(255, 255, 255, .8); */
+    width: 90%;
 }
 
-#heading, #gameInstructions {
-    background-color: rgba(255, 255, 255, .8)
+#gameTitle {
+    padding-top: 5px;
+    font-size: 18px;
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+        1px 1px 0 #000;
+    letter-spacing: 1px;
+}
+
+#instructionsHead {
+    font-size: 15px;
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+        1px 1px 0 #000;
+    letter-spacing: 1px;
+}
+
+#instructionsBody {
+    font-size: 12px;
 }
 
 #gameSettings {
@@ -73,7 +111,7 @@ table {
     justify-content: center;
     text-align: justify;
     margin: 0 auto;
-    padding: 15px 0;
+    padding: 10px 0;
 }
 
 .gameSetting {
@@ -86,8 +124,22 @@ table {
     margin: 0 auto;
 }
 
+.gameSetting > p {
+    text-shadow:
+        -1px -1px 0 rgb(0, 72, 117),
+        1px -1px 0 rgb(0, 72, 117),
+        -1px 1px 0 rgb(0, 72, 117),
+        1px 1px 0 rgb(0, 72, 117);
+    font-weight: 500;
+}
+
 select {
-    width: 50px;
+    width: 30px;
+    color: white;
+    background-color: rgba(0, 72, 117, .7);
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 h1, h2 {
@@ -106,7 +158,6 @@ h1, h2 {
     width: 100vw;
     justify-items: center;
 }
-
 
 #inputContainer, #buttonContainer, #secretCodeContainer, .turnContainer, .guessContainer, .dotContainer, .blackContainer, .whiteContainer {
     display: flex;
@@ -136,9 +187,9 @@ input:focus:invalid {
     grid-area: buttons;
     width: 224px;
     justify-content: space-around;
-    padding: 10px 0;
     grid-column-start: 2;
     grid-column-end: 3;
+    padding: 15px 0;
 }
 
 #secretCodeContainer {
@@ -292,24 +343,44 @@ input:focus:invalid {
 .modal {
     background-color: rgba(17, 0, 255, .8);
     color: white;
-    margin: 15% auto;
+    margin: 60% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 20%;
+    width: 80%;
+    font-size: 16px;
 }
 
 @media only screen and (min-width: 768px) {
-    /* #gameContainer{
-        grid-template-columns: 1fr 1fr;
-    } */
     #mainContainer {
+        background: url(../images/brain.jpg) no-repeat scroll center top transparent; 
+        background-size: 80%;
         height: 100vh;
-        width: 100vw;
+    }
+
+    #gameContainer {
+        background-color: rgba(0, 0, 0, .5);
+        color: #fff;
     }
 
     #textContainer > div {
         width: 60%;
-        /* background-color: rgba(255, 255, 255, .8); */
+    }
+    
+    #gameTitle {
+        padding-top: 10px;
+        font-size: 36px;
+    }
+
+    #instructionsHead {
+        font-size: 26px;
+    }
+
+    #instructionsBody {
+        font-size: 16px;
+    }
+
+    #gameSettings {
+        padding: 25px;
     }
 
     input[type="text"] {
@@ -318,5 +389,15 @@ input:focus:invalid {
 
     .mysteryPeg, .guessPeg {
         margin: 2px;
+    }
+
+    .modal {
+        background-color: rgba(17, 0, 255, .8);
+        color: white;
+        margin: 15% auto;
+        /* padding: 20px; */
+        border: 1px solid #888;
+        width: 40%;
+        font-size: 20px;
     }
 }
