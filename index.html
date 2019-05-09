@@ -14,10 +14,10 @@
     <div id="mainContainer">
         <div id="gameContainer">
             <div id="textContainer">
-                <h1 id="gameTitle" class="glow">Mastermind</h1>
+                <h1 id="gameTitle">Mastermind</h1>
                 <br>
-                <div id="instrcutionsContainer" class="glow">
-                    <h2 id="instructionsHead">Instructions</h2>
+                <div id="instrcutionsContainer">
+                    <h2 id="instructionsHead">How to Play:</h2>
                     <br>
                     <p id="instructionsBody">
                         Figure out the secret code. The length of the code and maximum digit allowed in each slot is indicated in the settings menu below. 
@@ -27,13 +27,13 @@
                         Black dots indicate how many digits in your guess appear in the secret code and in the correct position.
                     </p>
                 </div>
-                <div id="backPanel" class="glow"></div>
-                <div id="gameSettings" class="glow">
-                    <div class="gameSetting">
+                <div id="backPanel"></div>
+                <div id="gameSettings">
+                    <div class="gameSetting gsLeft">
                         <p>Code Length</p>
                         <select id="chooseSecretCodeLength"></select>
                     </div>
-                    <div class="gameSetting">
+                    <div class="gameSetting gsRight">
                         <p>Digit Range</p>
                         <select id="chooseDigitRange"></select>
                     </div>
@@ -41,14 +41,14 @@
             </div>
             <div id="playContainer">
                 <div class="scrollAnchor"></div>
-                <form id="inputContainer" class="glow"></form>
-                <div id="buttonContainer" class="glow">
+                <form id="inputContainer"></form>
+                <div id="buttonContainer">
                     <button id="resetGame" class="btn btn-space btn-danger btn-sm">Reset Game</button>
                     <button id="submitGuess" class="btn btn-space btn-primary btn-sm" disabled="disabled">Submit</button>
                 </div>
-                <div id="secretCodeContainer" class="glow"></div>
+                <div id="secretCodeContainer"></div>
             </div>
-            <div id="feedbackContainer" class="glow"></div>
+            <div id="feedbackContainer"></div>
         </div>
         <div id="victoryModal" class="modalContainer">
             <div class="modal">
