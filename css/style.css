@@ -277,6 +277,27 @@ input:focus:invalid {
     background-color: rgba(128, 0, 128, .8);
 }
 
+#victoryModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(56, 141, 221, 0.4); /* Black w/ opacity */
+}
+
+.modal {
+    background-color: rgba(17, 0, 255, .8);
+    color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+}
+
 @media only screen and (min-width: 768px) {
     /* #gameContainer{
         grid-template-columns: 1fr 1fr;
