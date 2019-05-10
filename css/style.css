@@ -48,17 +48,13 @@ font-family: 'Mukta', sans-serif;
 font-family: 'Varela Round', sans-serif;
 */
 
-body {
-    background-color: rgb(2, 158, 255);
-}
-
 #mainContainer {
-    background: url(../images/brain.jpg) no-repeat scroll center top transparent; 
-    background-size: 120%;
+    background: url(../images/face.png) no-repeat fixed center top transparent; 
+    background-size: cover;
+    min-height: 100vh;
 }
 
 #gameContainer {
-    background-color: rgba(0, 0, 0, .45);
     color: #fff;
 }
 
@@ -83,8 +79,8 @@ body {
 /* ----- ALL BORDER BOX SHADOW SETTINGS BELOW ----- */
 
 #instructionsBody, .gameSettings, .modal {
-    background-color: rgba(7, 58, 95, .65);
-    box-shadow: -1px -1px 14px 10px rgba(7, 58, 95, .75);
+    background-color: rgba(25, 28, 30, 0.65);
+    box-shadow: -1px -1px 14px 10px rgb(91, 255, 249);
 }
 
 /* ----- ALL BORDER BOX SHADOW SETTINGS ABOVE ----- */
@@ -163,6 +159,11 @@ select, button {
     font-size: 12px;
     border-radius: 8px;
     border: 1px solid white;
+}
+
+#submitGuess:disabled {
+    background-color: rgb(145, 145, 145);
+    color: #ccc;
 }
 
 h1, h2 {
@@ -309,7 +310,6 @@ input:invalid {
 }
 
 .dot {
-    border: black solid 1px;
     border-radius: 50%;
     margin: 1px;
 }
@@ -334,14 +334,14 @@ input:invalid {
     width: 3px;
 }
 
-
-
 .white {
     background-color: white;
+    border: black solid 1px;
 }
 
 .black {
-    background-color: black;
+    background-color: rgb(186, 37, 37);
+    border: white solid 1px;
 }
 
 .guessPeg1 {
@@ -403,6 +403,11 @@ input:invalid {
     padding: 20px;
     width: 80%;
     font-size: 16px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 30px;
 }
 
 @media only screen and (min-width: 500px) {
@@ -418,15 +423,6 @@ input:invalid {
     #instructionsHead {
         font-size: 26px;
     }
-    
-    /* ----- ALL BORDER BOX SHADOW SETTINGS BELOW ----- */
-    
-    #instructionsBody, .gameSetting, .modal {
-        background-color: rgba(7, 58, 95, .65);
-        box-shadow: -1px -1px 14px 10px rgba(7, 58, 95, .75);    
-    }
-    
-    /* ----- ALL BORDER BOX SHADOW SETTINGS ABOVE ----- */
 
     #instructionsBody {
         font-size: 14px;
@@ -478,12 +474,6 @@ input:invalid {
 }
 
 @media only screen and (min-width: 768px) {
-    #mainContainer {
-        background: url(../images/brain.jpg) no-repeat scroll center top transparent; 
-        background-size: 80%;
-        height: 100vh;
-    }
-
     #textContainer > div {
         width: 60%;
     }

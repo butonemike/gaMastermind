@@ -56,15 +56,15 @@ function validateGuess() {
 
     if (validSlots == secretCodeLength) {
         $('#submitGuess').removeAttr('disabled');
-        enableEnterSubmit(1);
+        toggleEnterKeySubmit('valid');
     } else {
         $('#submitGuess').attr('disabled','disabled');
-        enableEnterSubmit(0);
+        toggleEnterKeySubmit('invalid');
     }
 }
 
-function enableEnterSubmit(validity) {
-    if (validity == 1) {
+function toggleEnterKeySubmit(validity) {
+    if (validity == 'valid') {
         if (event.keyCode == 13) {
             handleSubmit();
         }
@@ -81,37 +81,20 @@ function handleSubmit() {
     render();
 }
 
+function getGuess() {
+    var guess = [];
+    for (var num = 1; num <= secretCodeLength; num++) {
+        guess.push(parseInt($('#input' + num).val()));
+    }
+
+    return guess;
+}
+
 function handleReset() {
     secretCodeLength = parseInt($('#chooseSecretCodeLength').val());
     digitRange = parseInt($('#chooseDigitRange').val());
 
     initializeGame();
-}
-
-function checkForWin() {
-    if (blackCount == secretCodeLength) {
-        $('input').attr('disabled','disabled');
-        $('#submitGuess').attr('disabled','disabled');
-        $(`#secretCodeContainer`).html('');
-
-        for (var i = 0; i < secretCodeLength; i++) {
-            $(`#secretCodeContainer`).append(`<div class="guessPeg ${widthMonitor.pegSize} guessPeg${secretCode[i]}">${secretCode[i]}</div>`);
-        }
-
-        displayVictoryModal();
-    }
-}
-
-function displayVictoryModal() {
-    var modal = $('#victoryModal');
-
-    (function () {
-        modal.css('display', 'block');
-    })();
-
-    $(window).click(function() {
-        modal.css('display', 'none');
-    });
 }
  
 function render() {
@@ -121,15 +104,6 @@ function render() {
     initializeEventListeners();
     $('#input1').focus();
     checkForWin();
-}
-
-function getGuess() {
-    var guess = [];
-    for (var num = 1; num <= secretCodeLength; num++) {
-        guess.push(parseInt($('#input' + num).val()));
-    }
-
-    return guess;
 }
 
 function getBlackCount() {
@@ -155,6 +129,20 @@ function getWhiteCount() {
     }
 
     return whiteCount - blackCount;
+}
+
+function checkForWin() {
+    if (blackCount == secretCodeLength) {
+        $('input').attr('disabled','disabled');
+        $('#submitGuess').attr('disabled','disabled');
+        $(`#secretCodeContainer`).html('');
+
+        for (var i = 0; i < secretCodeLength; i++) {
+            $(`#secretCodeContainer`).append(`<div class="guessPeg ${widthMonitor.pegSize} guessPeg${secretCode[i]}">${secretCode[i]}</div>`);
+        }
+
+        displayVictoryModal();
+    }
 }
 
 function createNewFeedbackRow() {
@@ -227,6 +215,18 @@ function initializeEventListeners() {
             validateGuess();
         }, false);
     }
+}
+
+function displayVictoryModal() {
+    var modal = $('#victoryModal');
+
+    (function () {
+        modal.css('display', 'block');
+    })();
+
+    $(window).click(function() {
+        modal.css('display', 'none');
+    });
 }
 
 widthMonitor = {
