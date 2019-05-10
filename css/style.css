@@ -55,7 +55,6 @@ body {
 #mainContainer {
     background: url(../images/brain.jpg) no-repeat scroll center top transparent; 
     background-size: 120%;
-    height: 100vh;
 }
 
 #gameContainer {
@@ -371,6 +370,14 @@ input:invalid {
 
 .guessPeg7 {
     background-color: rgba(128, 0, 128, .8);
+}
+
+.guessPeg8 {
+    background-color: rgba(98, 98, 98, 0.8);
+}
+
+.guessPeg9 {
+    background-color: rgba(39, 29, 22, 0.8);
 }
 
 .mysteryPeg {

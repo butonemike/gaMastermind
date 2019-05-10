@@ -104,7 +104,6 @@ function checkForWin() {
 
 function displayVictoryModal() {
     var modal = $('#victoryModal');
-    var close = $('#closeVictoryModal');
 
     (function () {
         modal.css('display', 'block');
