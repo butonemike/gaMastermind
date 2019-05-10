@@ -1,11 +1,16 @@
 <p align="center">
+  
 ![](https://i.imgur.com/CBU3pC1m.jpg)
+
 </p>
 
 # <p align="center">Mastermind! (Now in non board-game form)</p>
 
 <p align="center">
-![](https://i.imgur.com/ERTtxhRl.jpg)</p>
+
+![](https://i.imgur.com/ERTtxhRl.jpg)
+  
+</p>
 
 Mastermind is a classic mind game: a secret numeric code is generated (e.g., [1][1][2][3]) and you must figure it out using guesses and the hints provided.
 
