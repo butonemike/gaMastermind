@@ -52,23 +52,13 @@ font-family: 'Varela Round', sans-serif;
     background: url(../images/face.png) no-repeat fixed center top transparent; 
     background-size: cover;
     min-height: 100vh;
+    padding-top: 40px;
+    font-family: 'Audiowide', sans-serif; 
 }
 
 #gameContainer {
     color: #fff;
 }
-
-/* ----- ALL FONT FAMILY SETTINGS BELOW ----- */
-
-#textContainer, input[type="text"], .mysteryPeg, .turn, .guessPeg {
-    font-family: 'Mukta', sans-serif; 
-}
-
-.modal {
-    font-family: 'Varela Round', sans-serif;
-}
-
-/* ----- ALL FONT FAMILY SETTINGS ABOVE ----- */
 
 #textContainer > div {
     text-align: justify;
@@ -78,7 +68,7 @@ font-family: 'Varela Round', sans-serif;
 
 /* ----- ALL BORDER BOX SHADOW SETTINGS BELOW ----- */
 
-#instructionsBody, .gameSettings, .modal {
+#instructionsBody, .modal {
     background-color: rgba(25, 28, 30, 0.65);
     box-shadow: -1px -1px 14px 10px rgb(91, 255, 249);
 }
@@ -86,23 +76,25 @@ font-family: 'Varela Round', sans-serif;
 /* ----- ALL BORDER BOX SHADOW SETTINGS ABOVE ----- */
 
 #gameTitle {
+    color: rgb(128, 11, 166);
     padding-top: 5px;
     font-size: 22px;
+    font-weight: 600;
     text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-        1px 1px 0 #000;
+        -1px -1px 2px rgb(91, 255, 249),
+        1px 1px 2px rgb(91, 255, 249),
+        -1px 1px 2px rgb(91, 255, 249),
+        1px -1px 2px rgb(91, 255, 249);
     letter-spacing: 1px;
 }
 
 #instructionsHead {
-    font-size: 18px;
+    font-size: 22px;
     text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-        1px 1px 0 #000;
+        -1px -1px 2px rgb(128, 11, 166),
+        1px 1px 2px rgb(128, 11, 166),
+        -1px 1px 2px rgb(128, 11, 166),
+        1px -1px 2px rgb(128, 11, 166);
     letter-spacing: 1px;
 }
 
@@ -132,11 +124,13 @@ font-family: 'Varela Round', sans-serif;
 
 .gameSetting > p {
     text-shadow:
-        -1px -1px 0 rgb(0, 72, 117),
-        1px -1px 0 rgb(0, 72, 117),
-        -1px 1px 0 rgb(0, 72, 117),
-        1px 1px 0 rgb(0, 72, 117);
+        -1px -1px 2px rgb(128, 11, 166),
+        1px 1px 2px rgb(128, 11, 166),
+        -1px 1px 2px rgb(128, 11, 166),
+        1px -1px 2px rgb(128, 11, 166);
     font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 5px;
 }
 
 .gsLeft {
@@ -150,7 +144,8 @@ font-family: 'Varela Round', sans-serif;
 }
 
 select {
-    width: 40px;
+    width: 60px;
+    height: 30px;
     background-color: rgb(0, 81, 131);
 }
 
@@ -158,7 +153,7 @@ select, button {
     color: white;
     font-weight: 500;
     font-size: 12px;
-    border-radius: 8px;
+    border-radius: 3px;
     border: 1px solid white;
 }
 
@@ -188,10 +183,21 @@ h1, h2 {
     display: flex;
 }
 
+/* ----- ALL FEEDBACK BOX SIZES BELOW ----- */
+
+input, .turn, .guessPeg, .mysteryPeg {
+    height: 50px;
+    width: 50px;
+    font-size: 26px;
+}
+
+/* ----- ALL FEEDBACK BOX SIZES ABOVE ----- */
+
 input[type="text"] {
     text-align: center;
     margin: 1px;
     border: 1px solid #888888;
+
 }
 
 input:focus {
@@ -238,7 +244,6 @@ input:invalid {
     justify-content: center;
     align-items: center;
     font-weight: 800;
-    font-size: 16px;
     color: white;
     border: 1px #999999 solid;
     margin: 1px;
@@ -247,30 +252,6 @@ input:invalid {
 		1px -1px 0 #000,
 		-1px 1px 0 #000,
 		1px 1px 0 #000;
-}
-
-.pegLarge {
-    height: 50px;
-    width: 50px;
-    font-size: 26px;
-}
-
-.pegMedium {
-    height: 40px;
-    width: 40px;
-    font-size: 18px;
-}
-
-.pegSmall {
-    height: 22px;
-    width: 22px;
-    font-size: 16px;
-}
-
-.pegXSmall {
-    height: 15px;
-    width: 15px;
-    font-size: 12px;
 }
 
 #feedbackContainer {
@@ -294,6 +275,11 @@ input:invalid {
     display: flex;
     justify-content: center;
     font-weight: 800;
+    text-shadow:
+    -1px -1px 2px rgb(128, 11, 166),
+    1px 1px 2px rgb(128, 11, 166),
+    -1px 1px 2px rgb(128, 11, 166),
+    1px -1px 2px rgb(128, 11, 166);
 }
 
 .guessContainer {
@@ -313,26 +299,8 @@ input:invalid {
 .dot {
     border-radius: 50%;
     margin: 1px;
-}
-
-.dotLarge {
     height: 15px;
     width: 15px;
-}
-
-.dotMedium {
-    height: 10px;
-    width: 10px;
-}
-
-.dotSmall {
-    height: 5px;
-    width: 5px;
-}
-
-.dotXSmall {
-    height: 3px;
-    width: 3px;
 }
 
 .white {
@@ -418,16 +386,17 @@ h3 {
 
     #gameTitle {
         padding-top: 10px;
-        font-size: 36px;
+        font-size: 60px;
     }
     
     #instructionsHead {
-        font-size: 26px;
+        font-size: 30px;
     }
 
     #instructionsBody {
         font-size: 14px;
         line-height: 1.3;
+        border-radius: 3px;
     }
 
     #gameSettings {
