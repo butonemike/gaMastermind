@@ -1,8 +1,18 @@
-<p align="center">
-    <img align="center" src="https://imgur.com/SjV8bzO.jpg">
-</p>
+<a href="https://mikefeldberg.github.io/mastermind">
+    <p align="center">
+        <img align="center" src="https://imgur.com/SjV8bzO.jpg">
+    </p>
+</a>
 
-Mastermind is a classic mind game: a secret numeric code is generated (e.g., [1][1][2][3]) and you must figure it out using guesses and the hints provided.
+A digital take on the classic game.
+
+## Technologies Used
+
+HTML5 | CSS3 | JavaScript | jQuery
+
+## Game Instructions
+
+Mastermind is a classic mind game: a secret numeric code is generated (e.g., `[1][1][2][3]`) and you must figure it out using guesses and the hints provided.
 
 Enter a guess and click Submit. Red pegs indicate how many spots contain the correct number in the correct position. White pegs indicate how many spots contain the correct number but in the wrong position.
 
@@ -10,40 +20,37 @@ The only way to lose is to give up!
 
 ---
 
-## Technologies Used
+## Play
 
-HTML5 | CSS3 | JavaScript | jQuery
-
----
-
-## Getting Started
-
-[Crack the code Here!](https://mikefeldberg.github.io/mastermind)
+[Crack the code here!](https://mikefeldberg.github.io/mastermind)
 
 ---
 
-# Screenshots
+## Screenshots
 
-### Enter your guess
+### A secret code is generated at the start of each game. 
 
 ![](https://i.imgur.com/o9VYOFJm.png)
 
-### Receive feedback
+### Enter your guess and receive feedback in the form of red or white pegs to the right of the guess.
 
 ![](https://i.imgur.com/wfeewSWm.png)
 ![](https://i.imgur.com/7xBlZ3Um.png)
 
-### Eventually (hopefully) win!
+### Keep guessing until you crack the code, and reveal the `[?][?][?][?]`
 
 ![](https://i.imgur.com/ZKeACgym.png)
 
-### Change difficulty as you see fit (at your peril)
+### Increase the difficulty to challenge yourself further.
 
 ![](https://i.imgur.com/ktJTwcnm.png)
 
-### ...you were warned
+### What's the hardest code you can crack?
 
 ![](https://i.imgur.com/SEtMsufm.png)
 
 ---
 
+## Licence
+
+This project is licensed under the MIT License
