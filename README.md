@@ -8,7 +8,7 @@ A digital take on the classic game.
 
 ## Technologies Used
 
-HTML5 | CSS3 | JavaScript | jQuery
+`HTML5` | `CSS3` | `JavaScript` | `jQuery`
 
 # Game Instructions
 
@@ -27,12 +27,12 @@ The only way to lose is to give up!
 
 ![](https://i.imgur.com/o9VYOFJm.png)
 
-### Enter your guess and receive feedback in the form of red or white pegs to the right of the guess.
+### Submit your guess and receive feedback in the form of red or white pegs that show up to the right of each submitted guess.
 
 ![](https://i.imgur.com/wfeewSWm.png)
 ![](https://i.imgur.com/7xBlZ3Um.png)
 
-### Keep guessing until you crack the code, and reveal the `[?][?][?][?]`.
+### Keep guessing until you crack the code and reveal the secret behind the `[?][?][?][?]`.
 
 ![](https://i.imgur.com/ZKeACgym.png)
 
@@ -44,6 +44,6 @@ The only way to lose is to give up!
 
 ![](https://i.imgur.com/SEtMsufm.png)
 
-# Licence
+# License
 
 This project is licensed under the [MIT License](LICENSE.md).
