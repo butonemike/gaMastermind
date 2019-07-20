@@ -1,15 +1,5 @@
 <p align="center">
-  
-![](https://i.imgur.com/CBU3pC1m.jpg)
-
-</p>
-
-# <p align="center">Mastermind! (Now in non board-game form)</p>
-
-<p align="center">
-
-![](https://i.imgur.com/ERTtxhRl.jpg)
-  
+    <img align="center" src="https://imgur.com/SjV8bzO.jpg">
 </p>
 
 Mastermind is a classic mind game: a secret numeric code is generated (e.g., [1][1][2][3]) and you must figure it out using guesses and the hints provided.
@@ -19,6 +9,20 @@ Enter a guess and click Submit. Red pegs indicate how many spots contain the cor
 The only way to lose is to give up!
 
 ---
+
+## Technologies Used
+
+HTML5 | CSS3 | JavaScript | jQuery
+
+---
+
+## Getting Started
+
+[Crack the code Here!](https://mikefeldberg.github.io/mastermind)
+
+---
+
+# Screenshots
 
 ### Enter your guess
 
@@ -43,23 +47,3 @@ The only way to lose is to give up!
 
 ---
 
-## Getting Started
-
-[Crack the code Here!](https://butonemike.github.io/gaMastermind)
-
----
-
-## Technologies Used
-
-HTML5 | CSS3 | JavaScript | jQuery
-
----
-
-## Next Steps
-
-1. Fully responsive styling to accomodate mobile devices at all difficulty settings.
-2. Replace media-query functionality.
-3. Scroll-lock guess input area so it will remain at top of page for longer rounds.
-4. Guess/input validation tooltips.
-5. Guess/input auto-focus on empty fields.
-6. "Fastest game" tracker and leaderboard.
