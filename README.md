@@ -1,4 +1,4 @@
-<a href="https://mikefeldberg.github.io/mastermind">
+<a href="https://mikefeldberg.github.io/mastermind" target="_blank">
     <p align="center">
         <img align="center" src="https://imgur.com/SjV8bzO.jpg">
     </p>
@@ -10,7 +10,7 @@ A digital take on the classic game.
 
 HTML5 | CSS3 | JavaScript | jQuery
 
-## Game Instructions
+# Game Instructions
 
 Mastermind is a classic mind game: a secret numeric code is generated (e.g., `[1][1][2][3]`) and you must figure it out using guesses and the hints provided.
 
@@ -18,13 +18,8 @@ Enter a guess and click Submit. Red pegs indicate how many spots contain the cor
 
 The only way to lose is to give up!
 
----
+# <a href="https://mikefeldberg.github.io/mastermind" target="_blank">Crack the code here!</a>
 
-## Play
-
-[Crack the code here!](https://mikefeldberg.github.io/mastermind)
-
----
 
 ## Screenshots
 
@@ -37,7 +32,7 @@ The only way to lose is to give up!
 ![](https://i.imgur.com/wfeewSWm.png)
 ![](https://i.imgur.com/7xBlZ3Um.png)
 
-### Keep guessing until you crack the code, and reveal the `[?][?][?][?]`
+### Keep guessing until you crack the code, and reveal the `[?][?][?][?]`.
 
 ![](https://i.imgur.com/ZKeACgym.png)
 
@@ -49,8 +44,6 @@ The only way to lose is to give up!
 
 ![](https://i.imgur.com/SEtMsufm.png)
 
----
+# Licence
 
-## Licence
-
-This project is licensed under the MIT License
+This project is licensed under the [MIT License](LICENSE.md).
